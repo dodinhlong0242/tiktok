@@ -1,0 +1,336 @@
+/* page background */
+
+.page-bg {
+    background: #f6f8fb;
+    /* light grey background like screenshot */
+    min-height: 100vh;
+}
+
+.title {
+    font-weight: 700;
+    margin-top: 0.5rem;
+}
+
+.content-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2.5rem 3rem;
+    box-shadow: 0 12px 30px rgba(22, 27, 34, 0.06);
+}
+
+
+/* common card look */
+
+.coin-card,
+.card.border-0.shadow-sm {
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(22, 27, 34, 0.06);
+}
+
+.coin-card {
+    padding: 0;
+    overflow: hidden;
+    max-width: 320px;
+    /* keep all cards same max width for balanced grid */
+    width: 100%;
+}
+
+.coin-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1.25rem;
+}
+
+.coin-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.coin-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coin-icon img {
+    width: 48px;
+    height: 48px;
+    filter: brightness(1.25);
+}
+
+
+/* Removed drop-shadow filter */
+
+.coin-amount {
+    font-weight: 800;
+    font-size: 1.25rem;
+}
+
+.coin-price {
+    color: #8a8a8a;
+    font-size: 0.95rem;
+}
+
+.coin-card.active {
+    border: 2px solid #ff4b6b;
+    /* stronger red border */
+    background: #ffeef2;
+    /* light pink background */
+    box-shadow: 0 10px 26px rgba(255, 75, 107, 0.06);
+}
+
+
+/* Active coin inner tweaks */
+
+.coin-card.active .coin-body {
+    padding: 1.75rem 1.5rem;
+}
+
+.coin-card.active .coin-icon {
+    width: 72px;
+    height: 72px;
+}
+
+.coin-card.active .coin-icon img {
+    width: 56px;
+    height: 56px;
+    filter: brightness(1.15) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.06));
+}
+
+.coin-card.active .coin-amount {
+    font-weight: 900;
+    font-size: 1.35rem;
+    color: #111827;
+}
+
+.coin-card.active .coin-price {
+    color: #6b7280;
+    font-size: 0.95rem;
+    text-decoration: underline dotted rgba(0, 0, 0, 0.15);
+}
+
+.promo-text {
+    color: #d34b57;
+}
+
+.page-footer {
+    margin-top: 1.75rem;
+}
+
+.recharge-btn {
+    background: #e14b4b;
+    /* red button */
+    border-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+    color: #fff;
+}
+
+
+/* payment methods center */
+
+.card .d-flex.align-items-center {
+    justify-content: center;
+}
+
+
+/* Payment badge styles */
+
+.payment-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1px solid rgba(22, 27, 34, 0.06);
+    cursor: pointer;
+    transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+    height: 44px;
+}
+
+.payment-badge img {
+    height: 28px;
+    display: block;
+}
+
+.payment-badge .payment-fallback {
+    width: 36px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f6f7fb;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.payment-badge:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 22px rgba(22, 27, 34, 0.08);
+    border-color: rgba(99, 102, 241, 0.14);
+}
+
+.payment-badge:focus {
+    outline: none;
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.12);
+    transform: scale(1.03);
+}
+
+.payment-badge.active {
+    border-color: rgba(99, 102, 241, 0.28);
+    box-shadow: 0 12px 36px rgba(99, 102, 241, 0.10);
+    transform: scale(1.06);
+}
+
+
+/* stronger selected visuals */
+
+.payment-badge.active {
+    position: relative;
+    background: linear-gradient(180deg, #ffffff, #fbfdff);
+}
+
+.payment-badge.active::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.12);
+    pointer-events: none;
+}
+
+.payment-check {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #2563eb;
+    /* blue */
+    color: white;
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    font-size: 14px;
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.18);
+    transform: scale(1);
+}
+
+
+/* subtle pulse for active badge ring */
+
+.payment-badge.active::before {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    border-radius: 18px;
+    background: radial-gradient(circle at center, rgba(37, 99, 235, 0.08), rgba(37, 99, 235, 0.00) 60%);
+    animation: payment-pulse 1800ms ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes payment-pulse {
+    0% {
+        transform: scale(0.98);
+        opacity: 0.85;
+    }
+    50% {
+        transform: scale(1.02);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(0.98);
+        opacity: 0.85;
+    }
+}
+
+
+/* check animation used in OrderSummary */
+
+.check-wrap {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #ecfdf5, #bbf7d0);
+    border: 2px solid #34d399;
+    /* green ring */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(16, 185, 129, 0.16);
+    transform: scale(0.9);
+    animation: check-pop 320ms ease-out forwards;
+}
+
+.check-mark {
+    color: #065f46;
+    font-weight: 800;
+    font-size: 18px;
+    transform: scale(0);
+    opacity: 0;
+    animation: mark-pop 220ms 180ms ease-out forwards;
+}
+
+@keyframes check-pop {
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes mark-pop {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* ensure card contents are centered vertically and have consistent height */
+
+.coin-card .coin-body {
+    min-height: 110px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+
+/* pill like spacing for the grid */
+
+.g-5>.col {
+    display: flex;
+}
+
+
+/* ensure bottom row items are spaced evenly when in three columns */
+
+@media (min-width: 768px) {
+    .coin-list-bottom {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        align-items: stretch;
+    }
+    /* Make two-column cards wider so the top grid feels fuller */
+    .g-5>.col-md-6 .coin-card {
+        max-width: 460px;
+    }
+    .g-5>.col-md-6 .coin-card .coin-body {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        min-height: 120px;
+    }
+}
